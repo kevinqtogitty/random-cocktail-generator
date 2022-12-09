@@ -28,10 +28,7 @@ const CocktailHistoryMenu: React.FC<Props> = ({
 
   const historyTrail = useTrail(cocktailHistory.length, {
     opacity: cocktailHistoryMenuActive ? 1 : 0,
-    transform: cocktailHistoryMenuActive
-      ? 'translateY(0%)'
-      : 'translateY(100%)',
-    delay: 600
+    transform: cocktailHistoryMenuActive ? 'translateY(0%)' : 'translateY(100%)'
   });
 
   const handleCloseMenu = () => {
