@@ -3,11 +3,11 @@ import { a, config, useTransition } from 'react-spring';
 import { DrinkData } from '../requests/requests';
 
 interface Props {
-  randomCocktail: DrinkData;
+  activeCocktail: DrinkData;
 }
 
-const CocktailName: React.FC<Props> = ({ randomCocktail }) => {
-  const transition = useTransition(randomCocktail, {
+const CocktailName: React.FC<Props> = ({ activeCocktail }) => {
+  const transition = useTransition(activeCocktail, {
     from: {
       opacity: 1,
       transformOrigin: 'center',
