@@ -3,6 +3,7 @@ import { a, useSpring } from 'react-spring';
 
 const TipDialog = () => {
   const [active, setActive] = useState(false);
+  const [unMountToolTip, setUnMountToolTip] = useState(false);
 
   useEffect(() => {
     setActive(true);
@@ -19,28 +20,32 @@ const TipDialog = () => {
 
   const handleCloseDialog = () => {
     setActive(false);
+    setTimeout(() => {
+      setUnMountToolTip(true);
+    }, 1000);
   };
 
-  console.log(window.innerHeight, window.innerWidth);
   return (
     <>
-      <a.div
-        style={overlaySpring}
-        className="overlay"
-        onClick={handleCloseDialog}
-      >
-        <a.div style={dialogSpring} className="dialog">
-          <div className="tip-container">
-            <span className="tip">
-              Press the <span>'Enter'</span> key to get a random cocktail
-            </span>
-            <span>Happy drinkin&apos;! 🍸</span>
-            <span className="close-button" onClick={handleCloseDialog}>
-              X
-            </span>
-          </div>
+      {unMountToolTip ? null : (
+        <a.div
+          style={overlaySpring}
+          className="overlay"
+          onClick={handleCloseDialog}
+        >
+          <a.div style={dialogSpring} className="dialog">
+            <div className="tip-container">
+              <span className="tip">
+                Press the <span>'Enter'</span> key to get a random cocktail
+              </span>
+              <span>Happy drinkin&apos;! 🍸</span>
+              <span className="close-button" onClick={handleCloseDialog}>
+                X
+              </span>
+            </div>
+          </a.div>
         </a.div>
-      </a.div>
+      )}
     </>
   );
 };
