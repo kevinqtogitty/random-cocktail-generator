@@ -74,8 +74,34 @@ body {
   z-index: 3;
 }
 
-.overlay {
+.cocktailMenu {
+  font-size: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: scroll;
+  height: 100vh;
+  border: 2px solid blue;
+  width: 100%;
+}
+
+.cocktailMenu::-webkit-scrollbar {
+  display: none;
+}
+
+.cocktailMenuOverlay {
   z-index: 1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(2px);
+  left: calc(50% - 50vw);
+  color: #fff;
+}
+
+.overlay {
+  z-index: 2;
   position: fixed;
   width: 100vw;
   height: 100vh;
