@@ -59,7 +59,8 @@ body {
   padding-right: 1rem;
   margin: 0rem;
   font-size: 2rem;
-  max-width: 30rem;
+  max-width: 40rem;
+  max-height: 40rem;
   position: absolute;
   bottom: 0rem;
   right: 0rem;
@@ -81,12 +82,17 @@ body {
   align-items: flex-start;
   overflow: scroll;
   height: 100vh;
-  border: 2px solid blue;
-  width: 100%;
+  width: 100vw;
+  max-width: 1440px;
+  left: calc(50% - 50vw);
 }
 
 .cocktailMenu::-webkit-scrollbar {
   display: none;
+}
+
+.cocktailName {
+  cursor: pointer;
 }
 
 .cocktailMenuOverlay {
@@ -112,7 +118,7 @@ body {
 
 .tip-container {
   width: 25rem;
-  height: 12rem;
+  height: fit-content;
   border-radius: 5px;
   border: 5px solid #4b0082;
   font-size: 2rem;
@@ -123,14 +129,22 @@ body {
   background-color: #4501c3;
   row-gap: 1rem;
   position: relative;
+  padding: 1rem;
 }
 
 .tip {
   text-align: center;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 }
 
-.tip span {
+.tip p {
+  margin: 0rem;
+}
+
+.tip-highlight {
   color: #ff5f15;
 }
 
