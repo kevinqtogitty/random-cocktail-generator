@@ -23,12 +23,12 @@ const CocktailHistoryMenu: React.FC<Props> = ({
 
   const dialogSpring = useSpring({
     opacity: cocktailHistoryMenuActive ? 1 : 0,
-    transform: cocktailHistoryMenuActive ? 'translateY(0%)' : 'translateY(100%)'
+    transform: cocktailHistoryMenuActive ? 'translateY(0%)' : 'translateY(10%)'
   });
 
   const historyTrail = useTrail(cocktailHistory.length, {
     opacity: cocktailHistoryMenuActive ? 1 : 0,
-    transform: cocktailHistoryMenuActive ? 'translateY(0%)' : 'translateY(100%)'
+    transform: cocktailHistoryMenuActive ? 'translateY(0%)' : 'translateY(10%)'
   });
 
   const handleCloseMenu = () => {
