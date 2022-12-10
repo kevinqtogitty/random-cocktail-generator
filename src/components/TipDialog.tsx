@@ -36,7 +36,14 @@ const TipDialog = () => {
           <a.div style={dialogSpring} className="dialog">
             <div className="tip-container">
               <span className="tip">
-                Press the <span>'Enter'</span> key to get a random cocktail
+                <p>
+                  Press the <span className="tip-highlight">'Enter'</span> to
+                  get a random cocktail
+                </p>
+                <p>
+                  Press the <span className="tip-highlight">'spacebar'</span> to
+                  show drink history
+                </p>
               </span>
               <span>Happy drinkin&apos;! 🍸</span>
               <span className="close-button" onClick={handleCloseDialog}>
