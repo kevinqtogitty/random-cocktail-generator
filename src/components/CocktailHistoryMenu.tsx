@@ -18,7 +18,10 @@ const CocktailHistoryMenu: React.FC<Props> = ({
   setCocktailHistoryMenuActive
 }) => {
   const overlaySpring = useSpring({
-    opacity: cocktailHistoryMenuActive ? 1 : 0
+    opacity: cocktailHistoryMenuActive ? 1 : 0,
+    transform: cocktailHistoryMenuActive
+      ? 'translateY(0%)'
+      : 'translateY(-100%)'
   });
 
   const dialogSpring = useSpring({
@@ -28,7 +31,7 @@ const CocktailHistoryMenu: React.FC<Props> = ({
 
   const historyTrail = useTrail(cocktailHistory.length, {
     opacity: cocktailHistoryMenuActive ? 1 : 0,
-    transform: cocktailHistoryMenuActive ? 'translateY(0%)' : 'translateY(10%)'
+    transform: cocktailHistoryMenuActive ? 'translateY(0%)' : 'translateY(0%)'
   });
 
   const handleCloseMenu = () => {
@@ -41,7 +44,7 @@ const CocktailHistoryMenu: React.FC<Props> = ({
       className="cocktailMenuOverlay"
       onClick={handleCloseMenu}
     >
-      <a.div style={dialogSpring} className="dialog">
+      <a.div {...dialogSpring} className="dialog">
         <div className="cocktailMenu">
           {historyTrail.map((spring, i) => (
             <a.span
