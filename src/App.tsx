@@ -11,8 +11,6 @@ import { DrinkData, getRandomCocktail } from './requests/requests';
 function App() {
   const [activeCocktail, setActiveCocktail] = useState<DrinkData>();
   const [cocktailHistory, setCocktailHistory] = useState<DrinkData[]>([]);
-  const [triggerCocktailHistoryByClick, setTriggerCocktailHistoryByClick] =
-    useState(false);
   const [cocktailHistoryMenuActive, setCocktailHistoryMenuActive] =
     useState(false);
 
@@ -23,7 +21,6 @@ function App() {
 
   useEffect(() => {
     fetchData();
-    console.log('here');
   }, []);
 
   const fetchData = async (): Promise<void> => {
@@ -37,9 +34,9 @@ function App() {
   };
 
   const keyboardEvent = (e: KeyboardEvent): Promise<void> | void => {
-    if (e.key === 'Enter') {
+    if (e.code === 'Enter') {
       return fetchData();
-    } else if (e.key === 'h' || triggerCocktailHistoryByClick === true) {
+    } else if (e.code === 'Space') {
       return setCocktailHistoryMenuActive((state) => !state);
     }
   };
