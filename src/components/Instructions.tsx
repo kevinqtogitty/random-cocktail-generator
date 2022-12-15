@@ -2,7 +2,7 @@ import React from 'react';
 import { a } from 'react-spring';
 
 interface Props {
-  instructions: string;
+  instructions: string | undefined;
 }
 
 const Instructions: React.FC<Props> = ({ instructions }) => {
