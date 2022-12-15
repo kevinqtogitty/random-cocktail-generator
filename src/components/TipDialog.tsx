@@ -37,8 +37,8 @@ const TipDialog = () => {
             <div className="tip-container">
               <span className="tip">
                 <p>
-                  Press the <span className="tip-highlight">'Enter'</span> to
-                  get a random cocktail
+                  Press <span className="tip-highlight">'Enter'</span> to get a
+                  random cocktail
                 </p>
                 <p>
                   Press the <span className="tip-highlight">'spacebar'</span> to
